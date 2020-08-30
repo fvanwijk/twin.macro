@@ -31,6 +31,10 @@ const twinMacro = ({ babel: { types: t }, references, state, config }) => {
     typeof config.hasSuggestions === 'undefined'
       ? true
       : Boolean(config.hasSuggestions)
+  state.disableStyleWarning =
+    typeof config.disableStyleWarning === 'undefined'
+      ? false
+      : Boolean(config.disableStyleWarning)
 
   state.tailwindConfigIdentifier = program.scope.generateUidIdentifier(
     'tailwindConfig'

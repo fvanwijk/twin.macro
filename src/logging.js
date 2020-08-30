@@ -191,6 +191,13 @@ const logNotFoundVariant = ({ classNameRaw }) =>
 
 const logNotFoundClass = logGeneralError('That class was not found')
 
+const logStyleAttributeWarning = spaced(
+  logBadGood(
+    'Twin doesn’t support the `style={}` attribute',
+    '<div tw="" /> or <div css={tw``} />\n\nDisable this warning by adding this in your twin config: `{ disableStyleWarning: true }`\nRead more at https://twinredirect.page.link/style-attribute'
+  )
+)
+
 export {
   logNoVariant,
   logNoClass,
@@ -205,4 +212,5 @@ export {
   themeErrorNotFound,
   logNotFoundVariant,
   logNotFoundClass,
+  logStyleAttributeWarning,
 }
